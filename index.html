@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendário de jogos da COPA</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,300&family=Roboto:wght@700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!--Como organizar os projetos a partir do figma-->
+    <!-- Estrutura  -->
+    <!-- Pode conter tags dentro de tag  -->
+    <!-- Observando o documento cria uma estrutara de tags no html -->
+    <div id="app">
+      <!-- No header colocamos o cabeçario do nosso site-->
+      <header></header>
+      <!--Na main vamos colocar os cartões com as informações dos jogos-->
+      <!-- Nesse caso o header usa uma imagem, para isso vamos importar ela para o assets no projeto e incluila no header-->
+      <img src="./assets/logo.svg" alt="logo do nlw copa" />
+      <main id="cards">
+        <!-- Na primeira div colocaremos o nosso cartao-1 -->
+        <div class="card">
+          <!--aqui divideros em duas partes uma com data e outra com os jogos-->
+          <h2>
+            <!--Aqui separamos para destcar a data e o dia da semana-->
+            24/11
+            <span>quinta</span>
+          </h2>
+          <!--Como teremos uma tabela com os dias e os jogos precimos definir com o ul-->
+          <!-- Lista não ordenada-->
+          <ul>
+            <!-- itens dessa lista-->
+            <li>
+              <img src="./assets/icon=brazil.svg" alt="Bandeira do Brasil" />
+              <strong>16:00</strong>
+              <img src="./assets/icon=serbia.svg" alt="Bandeira da Servia" />
+            </li>
+          </ul>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

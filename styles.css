@@ -1,0 +1,157 @@
+/* 
+##Css fornece o estilo ao HTML
+ 
+Css funciona por declaração, que é um pedaço de codigo que irá ditar propriedades e valores a serem aplicados a um elemento HTML
+
+Exemplo de uma declaração
+
+body{
+  background: red;
+}
+
+-Cascata
+
+Temos que a ultima será mais relevante
+
+Exemplo
+
+body{
+  background: red;
+}
+body{
+  background: blue;
+}
+
+Nesse o fundo da pagina será azul
+
+-Especifidade
+
+Cada seletor tem um peso e a soma será leavada em conta para que determinada declaração seja mais especifica
+
+Exemplos
+
+identificador unico
+#id{
+ peso: 100;
+}
+
+.class{
+ peso: 10;
+}
+
+element{
+ peso: 1;
+}
+
+##Box model
+
+-Em css tudo é caixa
+
+Todos os elementos HTML serão considerados um caixa, assim como uma caixa de papelão
+
+-Caixas possuem determinadas propriedades
+
+Conteúdo, largura, altura, borda, preenchimento ( espaço externo)
+
+No header como tem um display block, que ocupa toda a linha por natural, e utiliza todo o espço disponivel do body
+
+header{
+  border: 1px solid red;
+  padding: 60px;
+}
+
+Já no h1 seguimos o mesmo principio do header, porem usando o que sobra de espaço apos o header
+
+h1{
+  border: 1px solid green
+  height: 60px;
+}
+
+Unando a propridade margin espaçamos o elemento p dos outros elementos
+
+p{
+  margin: 20px ;
+  border: 1px solid purple;
+}
+
+Já no span temos uma visualização do tipo inline, isso que dizer que ele ficara aomlado dos outros elementos.
+
+span{
+  border: 1px solid pink;
+}
+
+*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul{
+  list-style: none;
+}
+body{
+  background-color: #121214;
+  background-image: url(./assets/bg.svg);
+  background-position-x:center;
+  background-position-y: 55% ;
+}
+body *{
+font-family: 'Roboto', sans-serif;
+}
+
+#app{
+  width: fit-content;
+  margin: 52px auto;
+}
+header{
+  margin-bottom: 63px;
+}
+.card{
+ background: #1d1c19;
+  padding: 32px 23px;
+  text-align: center;
+  border-radius: 6px;
+  border-bottom: 2px solid #746615;
+}
+.card h2{
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 6px;
+  width: fit-content;
+  margin-inline: auto;
+  margin-bottom: 53px;
+  color: #f7dd43;
+}
+
+.card h2 span{
+  color:#E1E1E6;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.card ul{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 270px;
+}
+
+.card ul li{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card ul li + li{
+  padding-top: 24px;
+  border-top: 1px solid #323238;
+}
+.card ul li strong{
+  font-size:  36px;
+  line-height: 125%;
+  font-weight: 900;
+  color: #E1E1E6;
+}
