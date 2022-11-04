@@ -1,99 +1,37 @@
-/* 
-##Css fornece o estilo ao HTML
- 
-Css funciona por declaração, que é um pedaço de codigo que irá ditar propriedades e valores a serem aplicados a um elemento HTML
 
-Exemplo de uma declaração
-
-body{
-  background: red;
-}
-
--Cascata
-
-Temos que a ultima será mais relevante
-
-Exemplo
-
-body{
-  background: red;
-}
-body{
-  background: blue;
-}
-
-Nesse o fundo da pagina será azul
-
--Especifidade
-
-Cada seletor tem um peso e a soma será leavada em conta para que determinada declaração seja mais especifica
-
-Exemplos
-
-identificador unico
-#id{
- peso: 100;
-}
-
-.class{
- peso: 10;
-}
-
-element{
- peso: 1;
-}
-
-##Box model
-
--Em css tudo é caixa
-
-Todos os elementos HTML serão considerados um caixa, assim como uma caixa de papelão
-
--Caixas possuem determinadas propriedades
-
-Conteúdo, largura, altura, borda, preenchimento ( espaço externo)
-
-No header como tem um display block, que ocupa toda a linha por natural, e utiliza todo o espço disponivel do body
-
-header{
-  border: 1px solid red;
-  padding: 60px;
-}
-
-Já no h1 seguimos o mesmo principio do header, porem usando o que sobra de espaço apos o header
-
-h1{
-  border: 1px solid green
-  height: 60px;
-}
-
-Unando a propridade margin espaçamos o elemento p dos outros elementos
-
-p{
-  margin: 20px ;
-  border: 1px solid purple;
-}
-
-Já no span temos uma visualização do tipo inline, isso que dizer que ele ficara aomlado dos outros elementos.
-
-span{
-  border: 1px solid pink;
-}
-
-*/
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+:root{
+--card-color-primary:#f7dd43;
+--card-bg-color:#1D1C19;
+--card-title-border-color:#746615;
+--bg: url(./assets/bg=yellow.svg);
+}
+
 ul{
   list-style: none;
 }
+
 body{
   background-color: #121214;
-  background-image: url(./assets/bg.svg);
-  background-position-x:center;
-  background-position-y: 55% ;
+  background-image: var(--bg);
+  
+ 
+}
+body.blue{
+  --card-color-primary:#338AF3;
+  --card-bg-color:#202024;
+  --card-title-border-color:#338AF3;
+  --bg: url(./assets/bg=blue.svg);
+}
+body.green{
+  --card-color-primary:#047C3F;
+  --card-bg-color:#1A1F1B;
+  --card-title-border-color:#047C3F;
+  --bg: url(./assets/bg=green.svg);
 }
 body *{
 font-family: 'Roboto', sans-serif;
@@ -101,25 +39,35 @@ font-family: 'Roboto', sans-serif;
 
 #app{
   width: fit-content;
-  margin: 52px auto;
+  margin: auto;
+  padding-top: 52px;
 }
 header{
+  text-align: center;
   margin-bottom: 63px;
 }
+#cards{
+  display:flex;
+  flex-direction: column;
+  gap: 32px;
+}
 .card{
- background: #1d1c19;
+ background: var(--card-bg-color);
   padding: 32px 23px;
   text-align: center;
   border-radius: 6px;
-  border-bottom: 2px solid #746615;
+  border-bottom: 2px solid var(--card-color-primary);
 }
 .card h2{
   display: flex;
   gap: 16px;
   justify-content: center;
   align-items: center;
+
   padding: 8px 16px;
+  border: 1px solid var(--card-title-border-color);
   border-radius: 6px;
+
   width: fit-content;
   margin-inline: auto;
   margin-bottom: 53px;
@@ -128,7 +76,7 @@ header{
 
 .card h2 span{
   color:#E1E1E6;
-  font-size: 14px;
+  font-size: 20px;
   text-transform: uppercase;
 }
 
@@ -154,4 +102,32 @@ header{
   line-height: 125%;
   font-weight: 900;
   color: #E1E1E6;
+}
+
+.card h2:hover, .card ul li strong:hover , .card ul li img:hover{
+  transform: scale(1.1);
+ }
+ .card h2, .card ul li strong , .card ul li img{
+ transition: transform 0.3s;
+}
+.card{
+  animation: appear 2s;
+}
+
+@keyframes appear {
+  0%{
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 700px) {
+  #cards{
+    max-width: 670px;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
 }
